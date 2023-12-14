@@ -1,0 +1,49 @@
+print('-=' * 63)
+print('LISTA DE COMPRAS'.center(145))
+print('-=' * 63)
+
+lista = input(' 1° DA LISTA DE COMPRA: ')
+lista2 = input(' 2° DA LISTA DE COMPRA: ')
+lista3 = input(' 3° DA LISTA DE COMPRA: ')
+lista4 = input(' 4° DA LISTA DE COMPRA: ')
+lista5 = input(' 5° DA LISTA DE COMPRA: ')
+lista6 = input(' 6° DA LISTA DE COMPRA: ')
+lista7 = input(' 7° DA LISTA DE COMPRA: ')
+lista8 = input(' 8° DA LISTA DE COMPRA: ')
+lista9 = input(' 9° DA LISTA DE COMPRA: ')
+lista10 = input('10° DA LISTA DE COMPRA: ')
+
+
+    
+lista_x = [lista,lista2,lista3,lista4,lista5,lista6,lista7,lista8,lista9,lista10]
+
+
+while True:
+    opcao = int(input('\nO QUE VOCÊ DESEJA FAZER:\nALTERAR ITEM[1]\nADICIONAR ITEM[2]\nDELETAR[3]\nMOSTRAR LISTA DE COMPRAS[4]\nSAIR[5]\n'))
+    if opcao == 1:
+        item_alterar = input('Digite o item que quer alterar:')
+        valor_inserir = input('Digite o item que quer adicionar:')
+        if item_alterar in lista_x:
+            indice = lista_x.index(item_alterar)
+            lista_x.insert(indice,valor_inserir)
+        else:
+            print('ITEM NÃO CONSTA NA LISTA!!')
+
+    elif opcao == 2:
+        item_adicionar = input('Item ser adicionado: ')
+        lista_x.append(item_adicionar)
+        
+    elif opcao == 3:
+        item_deletar = input('Item a ser deletado: ')
+        if item_deletar in lista_x:
+            indice2 = lista_x.index(item_deletar)
+            del lista_x[indice2]
+            print(f'{item_deletar} foi excluido da lista')
+        else:
+            print('ITEM NÃO CONSTA NA LISTA')
+    elif opcao == 4:
+       for indice,valor in enumerate(lista_x):
+            print(indice +1,'°',valor)
+            
+    elif opcao == 5:
+            break
