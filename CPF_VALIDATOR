@@ -1,0 +1,36 @@
+print('-=' * 99)
+print('VALIDADOR DE CPF'.center(200))
+print('-=' * 99)
+
+cpf = '447035270'
+CPF = '447.035.270-57'
+cpf_fat = cpf[:9]
+ind = 10
+result = 0
+
+for c in cpf_fat:
+    result += int(c) * ind
+    ind -=1
+    
+#print(f'Soma da multiplicação do indice de 10 a 2 e os numeros do cpf = {result}')
+digito = (result * 10) % 11 
+digito = digito if result % 9 else 0
+print(f'\nPrimeiro digito {digito}')
+
+cpf_2 = '447035270' + str(digito)
+ind_2 = 11
+result_2 = 0
+cpf_fat2 = cpf_2[:9 + len(str(digito))] 
+
+for c in cpf_2:
+    result_2 += int(c) * ind_2
+    ind_2 -=1
+segundo_digit = (result_2  * 10) % 11
+segundo_digit = segundo_digit if segundo_digit <= 9 else 0
+print(f'\nSegundo digito {segundo_digit} ')
+
+
+cpf_final = '447035270' + str(digito) + str(segundo_digit)
+cpf_x = f'{cpf_final[:3]}.{cpf_final[3:6]}.{cpf_final[6:9]}-{cpf_final[9:]}'
+final = cpf_x if CPF == cpf_x else 'CPF não é valido também'
+print(f'\nO CPF batem e são validos {final}')
