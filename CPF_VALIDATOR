@@ -12,7 +12,6 @@ for c in cpf_fat:
     result += int(c) * ind
     ind -=1
     
-#print(f'Soma da multiplicação do indice de 10 a 2 e os numeros do cpf = {result}')
 digito = (result * 10) % 11 
 digito = digito if result % 9 else 0
 print(f'\nPrimeiro digito {digito}')
