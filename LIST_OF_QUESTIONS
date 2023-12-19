@@ -1,0 +1,63 @@
+perguntas = [
+    {
+        'Pergunta' : '25 x 3',
+        'Respostas' : ['75','150','50','72'],
+        'Resposta' : '1',
+    },
+    {
+        'Pergunta': '100 x 2',
+        'Respostas' : ['20','102','145','200'],
+        'Resposta' : '4'
+    },
+    {
+        'Pergunta': '24 + 10 + 10 - 5',
+        'Respostas' : ['45','39','35','14'],
+        'Resposta' : '2'
+    },
+]
+
+print('\n(1) - Pergunta: ',perguntas[0]['Pergunta'],':')
+print('\nOpções')
+resposta_Certa_1 = perguntas[0]['Resposta']
+cont = 0
+errou = 0
+
+for indice,valor in enumerate(perguntas[0]['Respostas']):
+    print('\n(',indice+1,')','-',valor)
+opcao = input('\nEscolha uma opção: ')
+if opcao == resposta_Certa_1:
+        print('\nACERTOU!!!!')
+        cont +=1
+else:
+    print('VOCÊ ERROU!!')
+    errou += 1
+
+print('\n(2) - Pergunta ',perguntas[1]['Pergunta'],':')
+print('\nOpções')
+
+for indice,valor in enumerate (perguntas[1]['Respostas']):
+    print('\n(',indice+1,')','-',valor)
+opcao2 = input('\nEscolha uma opcão : ')
+resposta_Certa_2 = perguntas[1]['Resposta']
+if opcao2 == resposta_Certa_2:
+    print('\nVOCÊ ACERTOU!!!')
+    cont += 1
+else:
+    print('VOCÊ ERROU!!')
+    errou += 1
+    
+print('(3)',perguntas[2]['Pergunta'],':')
+
+for indice,valor in enumerate(perguntas[2]['Respostas']):
+    print('\n(',indice+1,')','-',valor)
+opcao3 = input('\nEscolha uma opção:')
+resposta_Certa_3 = perguntas[2]['Resposta']
+if opcao3 == resposta_Certa_3:
+    print('ACERTOU!!!')
+    cont  += 1
+else:
+    print('ERROU!!')
+    errou += 1
+
+print(f'\nVocê acertou {cont} perguntas')
+print(f'\nVocê errou {errou} perguntas')
