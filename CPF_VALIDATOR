@@ -33,3 +33,4 @@ cpf_final = '447035270' + str(digito) + str(segundo_digit)
 cpf_x = f'{cpf_final[:3]}.{cpf_final[3:6]}.{cpf_final[6:9]}-{cpf_final[9:]}'
 final = cpf_x if CPF == cpf_x else 'CPF não é valido também'
 print(f'\nO CPF batem e são validos {final}')
+print(f'FOI MUDADO DIA 10/03/2024')
