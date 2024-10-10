@@ -1,0 +1,24 @@
+from PyPDF2 import PdfReader
+import pandas as pd
+
+nota_pdf = input('Digite o Caminho da Nota em PDF: ')
+info = input('Qual informação deseja acessar: ')
+reader = PdfReader(nota_pdf)
+
+page = reader.pages[0]
+
+text_pdf = page.extract_text()
+
+text_format = text_pdf.split('\n')
+controle = False
+observacoes = []
+
+for _ in text_format:
+    if info in _:
+        controle = True
+        observacoes.append(_)
+    elif controle:
+        observacoes.append(_)
+
+observacoes_text = ' '.join(observacoes)
+print('\n',observacoes_text)
